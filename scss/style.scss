@@ -1,0 +1,690 @@
+$breakpoints: (
+  'sm': 'screen and (max-width: 576px)',
+  'md': 'screen and (max-width: 550px)',
+  'lg': 'screen and (max-width: 800px)',
+  'xl': 'screen and (max-width: 1040px)',
+) !default;
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+
+
+body{
+  font-family: "Yu Mincho", "YuMincho";
+  margin: 0px;
+}
+a:hover{
+  color: rgba(7, 7, 7, 0.306)!important;
+}
+
+nav{
+  position: fixed;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 65px;
+  background-color: #F3F0E8;
+  z-index: 100;
+}
+
+
+.logo{
+  position: absolute;
+  left: 15px;
+  height: 64px;
+  p{
+    text-align: left;
+    font-size: 20px;
+    margin: 0px;
+    line-height: 65px;
+  }
+}
+.menu{
+  position: absolute;
+  right: 15px;
+  width: 412px;
+  @include mq(lg){
+    display: none;
+  }
+  ul{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  text-align: right;
+  padding: 0px;
+  width: auto;
+  
+  li{
+    margin-left: 3%;
+  }
+  a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+  }
+}
+}
+
+
+
+.drawer-hamburger{
+  z-index: 120!important;
+  display: none!important;
+  top: 4px!important;
+  @include mq(lg){
+    display: block!important;
+  }
+}
+.drawer-nav{
+  z-index: 120!important;
+  width: 200px!important;
+  background-color: #F3F0E8!important;
+  .drawer-menu{
+    flex-direction: column;
+    position: relative;
+    top: 20px;
+    left: 70px;
+    li{
+      margin-bottom: 20px;
+      text-align: right!important;
+      a{
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+
+
+.headimg{
+  background-image: url(../img/furugi2.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 800px;
+  position: relative;
+  z-index: 2;
+  @include mq(lg){
+    height: 550px;
+  }
+}
+.shopname{
+  width: 600px;
+  height: 400px;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: relative;
+  top: 30%;
+  right: 0px;
+  left: 0px;
+  margin: auto;
+  @include mq(lg){
+    width: 300px;
+    height: 250px;
+    top: 30%;
+  }
+  h1{
+    text-align: center;
+    line-height: 350px;
+    margin: 0px;
+    font-size: 70px;
+    color: #707070;
+    height: 100px;
+    @include mq(lg){
+      line-height: 230px;
+      font-size: 37px;
+    }
+  }
+  p{
+    text-align: center;
+    line-height: 300px;
+    margin: 0px;
+    font-size: 45px;
+    color: #707070;
+    font-weight: bold;
+    @include mq(lg){
+      line-height: 110px;
+      font-size: 22px;
+    }
+  }
+}
+
+.category{
+  padding-top: 80px;
+  position: relative;
+  z-index: 2;
+  background-color: white;
+  height: 900px;
+  @include mq(xl){
+    height: 700px;
+  }
+  @include mq(lg){
+    height: 800px;
+  }
+  
+  h2{
+    text-align: center;
+    font-size: 60px;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    @include mq(lg){
+      font-size: 40px;
+    }
+  }
+  >div{
+    display: flex;
+    flex-direction: row;
+    width: 1000px;
+    margin: auto;
+    @include mq(xl){
+      width: 680px;
+    }
+    @include mq(lg){
+      width: 70%;
+      flex-direction: column;
+    }
+  }
+}
+.mens{
+  background-image: url(../img/mens.jpg);
+  background-size: cover;
+  width: 400px;
+  height: 500px;
+  margin-right: 10%;
+  @include mq(xl) {
+    width: 300px;
+    height: 400px;
+    margin-right: 5%;
+  }
+  @include mq(lg){
+    width: 250px;
+    height: 250px;
+    margin: auto;
+    margin-bottom: 30px;
+  }
+  >div{
+    width: 400px;
+    height: 140px;
+    background-color: rgba(255, 255, 255, 0.800);
+    position: relative;
+    top: 70px;
+    @include mq(xl){
+      width: 300px;
+      height: 90px;
+    }
+    @include mq(lg){
+      width: 250px;
+      top: 40px;
+    }
+    >p{
+      font-size: 45px;
+      text-align: center;
+      line-height: 150px;
+      color: #707070;
+      @include mq(xl){
+        font-size: 35px;
+        line-height: 100px;
+      }
+      @include mq(lg){
+        font-size: 30px;
+        line-height: 90px;
+      }
+    }
+  }
+  
+
+  button{
+    width: 100px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.800);
+    display: block;
+    margin: auto;
+    position: relative;
+    top: 240px;
+    border: none;
+    @include mq(xl){
+      top: 200px;
+    }
+    @include mq(lg){
+      top: 70px;
+    }
+    a{
+      color: #707070;
+      text-decoration: none;
+      font-size: 24px;
+      font-family: "Yu Mincho", "YuMincho";
+      @include mq(xl){
+        font-size: 20px;
+      }
+    }
+  }
+}
+.ladys{
+  background-image: url(../img/ladys.jpg);
+  background-size: cover;
+  width: 400px;
+  height: 500px;
+  margin-left: 10%;
+  @include mq(xl){
+    width: 300px;
+    height: 400px;
+    margin-left: 5%;
+  }
+  @include mq(lg){
+    width: 250px;
+    height: 250px;
+    margin: auto;
+  }
+  >div{
+    width: 400px;
+    height: 140px;
+    background-color: rgba(255, 255, 255, 0.800);
+    position: relative;
+    top: 70px;
+    @include mq(xl){
+    width: 300px;
+    height: 90px;
+    }
+    @include mq(lg){
+      top: 40px;
+      width: 250px;
+    }
+    >p{
+      font-size: 45px;
+      text-align: center;
+      line-height: 150px;
+      color: #707070;
+      @include mq(xl){
+        font-size: 35px;
+        line-height: 100px;
+      }
+      @include mq(lg){
+        font-size: 30px;
+        line-height: 90px;
+      }
+    }
+  }
+  button{
+    width: 100px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.800);
+    display: block;
+    margin: auto;
+    position: relative;
+    top: 240px;
+    border: none;
+    @include mq(xl){
+      top: 200px;
+    }
+    @include mq(lg){
+      top: 70px;
+    }
+    a{
+      color: #707070;
+      text-decoration: none;
+      font-size: 24px;
+      font-family: "Yu Mincho", "YuMincho";
+    }
+  }
+}
+
+.blog{
+  height: 250px;
+  opacity: 90%;
+  >img{
+    width: 100%;
+    height: 740px;
+    position: fixed;
+    top: 50px;
+    z-index: 0;
+  }
+  >div{
+    width: 230px;
+    height: 130px;
+    background-color: rgba(255, 255, 255, 0.800);
+    margin: auto;
+    position: relative;
+    top: 50px;
+    z-index: 1;
+    h2{
+      text-align: center;
+      line-height: 130px;
+      font-size: 45px;
+    }
+  }
+  p{
+    text-align: center;
+    font-size: 30px;
+    color: #F3F0E8;
+    position: relative;
+    top: 56px;
+    @include mq(lg){
+      top: 57px;
+    }
+  }
+}
+.swiper-container{
+  background-color: #F3F0E8;
+}
+
+.blogcontents{
+  display: flex;
+  flex-direction: row;
+  padding: 3%;
+  padding-bottom: 0;
+  position: relative;
+  z-index: 2;
+  background-color: #F3F0E8;
+  height: 300px;
+  width: 100%!important;
+ @include mq(lg){
+   padding-left: 0;
+   padding-right: 0;
+ }
+ 
+  >div{
+      margin: 0 50px 0 0!important;
+      width: calc(25% - 47px)!important;
+      background-color: #fff;
+      height: 90%;
+      padding: 5px;
+      box-shadow: 1px 1px 1.5px 1.5px rgba(0, 0, 0, 0.136);
+      @include mq(xl){
+      width: calc(33.3333333% - 47px)!important;     
+      }
+      @include mq(lg){
+       width: calc(50% - 15px)!important;
+       margin-right: 0px!important;
+      
+      }
+    
+      p{
+        background-color: white;
+        margin: 0;
+        font-size: 70%;
+        padding: 10px;
+      }
+      >div{
+        height: 168px;
+        background-color: #fff;
+      
+      }
+  }
+  >div:nth-child(4n){
+    margin-right: 6.2%!important;
+    @include mq(xl){
+      margin-right: 50px!important;
+    }
+    @include mq(lg){
+      margin-right: 0px!important;
+    }
+  }
+  >div:nth-child(3){
+    @include mq(xl){
+      margin-right: 55px!important;
+    }
+    @include mq(lg){
+      margin-right: 0px!important;
+    }
+  }
+  >div:nth-child(2n){
+    @include mq(lg){
+     margin-right: 0px!important;
+     margin-left: 10px!important;
+    }  
+  }
+
+  img{
+    width: 100%;
+    height: 205px;
+    @include mq(lg){
+      height: 95%;
+    }
+  }
+}
+
+.swiper-wrapper{
+  width: auto!important;
+  height: 340px!important;
+  @include mq(lg){
+    height: 300px!important;
+    margin: auto!important;
+  }
+}
+
+.swiper-pagination{
+  bottom: 0px!important;
+}
+
+
+.blank{
+  background-color: white;
+  height: 280px;
+  position: relative;
+  z-index: 1;
+}
+
+.access{
+  width: 70%;
+  position: relative;
+  z-index: 2;
+  background-color: #F3F0E8;
+  height: 300px;
+  display: flex;
+  flex-direction: row;
+  @include mq(lg){
+    width: 100%;
+  }
+  >div{
+    position: relative;
+    top: 50px;
+    left: 100px;
+    margin-right: 10%;
+    @include mq(xl){
+    left: 50px;
+    margin-right: 8%;
+    }
+    @include mq(lg){
+      left: 20px;
+    }
+    h2{
+      margin: 0;
+      color: #707070;
+      font-size: 40px;
+      @include mq(xl){
+        font-size: 35px;
+      }
+      @include mq(lg){
+        font-size: 30px;
+      }
+    }
+    p{
+      margin: 0;
+      @include mq(xl){
+        font-size: 13px;
+      }
+      @include mq(lg){
+        font-size: 10px;
+      }
+    }
+  }
+
+  >div:nth-child(2){
+    position: relative;
+    z-index: 5;
+    top: 60px;
+    margin: 0;
+  }
+}
+
+.gmap {
+  height: 0;
+  width: 45%;
+  overflow: hidden;
+  padding-bottom: 40%;
+  position: relative;
+  @include mq(lg){
+    width: 50%;
+    padding-bottom: 50%;
+    left: 10px!important;
+  }
+  }
+
+
+iframe{
+  position: absolute;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+}
+
+footer{
+  position: relative;
+  z-index: 2;
+  background-color: #F3F0E8;
+  height: 300px;
+}
+
+.footname{
+  width: 200px;
+  margin: auto;
+  position: relative;
+  top: 70px;
+  p{
+    margin: 0;
+    text-align: center;
+    font-size: 30px;
+    @include mq(lg){
+      font-size: 25px;
+    }
+  }
+}
+
+.icon{
+  display: flex;
+  flex-direction: row;
+  width: 220px;
+  margin: auto;
+  position: relative;
+  top: 100px;
+  >div{
+    margin: 0 50px 0 0;
+    width: calc(33.33% - 34px);
+  }
+}
+
+
+
+
+.insta_btn {
+  display: inline-block;
+  text-align: center;/*中央揃え*/
+  
+  text-decoration: none;/*下線消す*/
+}
+
+.insta_btn:hover {/*ホバー時*/
+  color:#668ad8;/*文字色*/
+  transition: .5s;/*ゆっくり変化*/
+}
+
+.insta_btn .insta{/*アイコンの背景*/
+  position: relative;/*相対配置*/
+  display: inline-block;
+  width: 40px;/*幅*/
+  height: 40px;/*高さ*/
+  background: -webkit-linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
+  background: linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;/*グラデーション①*/
+  overflow: hidden;/*はみ出た部分を隠す*/
+  border-radius: 13px;/*角丸に*/
+
+}
+
+.insta_btn .insta:before{/*グラデーションを重ねるため*/
+  content: '';
+  position: absolute;/*絶対配置*/
+  top: 23px;/*ずらす*/
+  left: -18px;/*ずらす*/
+  width: 50px;/*グラデーションカバーの幅*/
+  height: 50px;/*グラデーションカバーの高さ*/
+  background: -webkit-radial-gradient(#ffdb2c 10%, rgba(255, 105, 34, 0.65) 55%, rgba(255, 88, 96, 0) 70%);
+  background: radial-gradient(#ffdb2c 10%, rgba(255, 105, 34, 0.65) 55%, rgba(255, 88, 96, 0) 70%);/*グラデーション②*/
+}
+
+.insta_btn .fa-instagram {/*アイコン*/
+  color: #FFF;/*白に*/
+  position: relative;/*z-indexを使うため*/
+  z-index: 2;/*グラデーションより前に*/
+  font-size: 30px;/*アイコンサイズ*/
+  line-height: 40px;/*高さと合わせる*/
+}
+.flowbtn6{
+  border-radius:13px;		
+  position:relative;
+  display:inline-block;
+  width:40px;
+  height:40px;
+  font-size:23px;
+  color:#fff!important;
+  transition:.5s;
+  text-decoration:none;
+  }
+  .flowbtn6 i{
+    position:absolute;
+    top:50%;
+    left:50%;
+    -ms-transform:translate(-50%,-50%);
+    -webkit-transform:translate(-50%,-50%);
+    transform:translate(-50%,-50%);
+    }
+
+.fl_tw1{
+  background:#55acee;
+  }
+
+  .fl_fb6 .fa-facebook-f{
+    position:relative;
+    top:18px;
+    left:20px;
+    font-size:27px;
+    }
+    /* Facebookアイコン背景*/
+    .fl_fb6{
+    background:-webkit-linear-gradient(top, #5c80c6 0%, #34528c 74%);	
+    background:linear-gradient(to bottom, #5c80c6 0%, #34528c 74%);	
+    }
+
+  .copy{
+    width: 300px;
+    margin: auto;
+    position: relative;
+    top: 120px;
+    p{
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+  }
+
+  #page_top {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    z-index: 15;
+}
+#page_top a {
+    background-color: rgba(243, 65, 65, 0.904);
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+#page_top a:hover {
+    background-color: rgba(241, 73, 73, 0.673);
+    text-decoration: none;
+}
